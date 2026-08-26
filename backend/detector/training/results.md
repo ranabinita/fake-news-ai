@@ -115,3 +115,117 @@ Confusion Matrix:
 | Title only | 94.55% |
 | Body only | 99.24% |
 | Title + Body | 99.38% |
+
+**## Experiment 5 — 5-Fold Cross-Validation**
+
+Model: TF-IDF + Linear SVM
+
+Folds: 5
+
+### Accuracy
+
+Fold scores:
+
+- 0.9937
+- 0.9935
+- 0.9937
+- 0.9930
+- 0.9927
+
+Mean Accuracy: 99.33%
+
+Standard Deviation: 0.04 percentage points
+
+### Precision
+
+Mean Precision: 99.11%
+
+Standard Deviation: 0.12 percentage points
+
+### Recall
+
+Mean Recall: 99.68%
+
+Standard Deviation: 0.07 percentage points
+
+### F1 Score
+
+Mean F1: 99.39%
+
+Standard Deviation: 0.03 percentage points
+
+
+**## Experiment 6 — Model Interpretability**
+
+Model: TF-IDF + Linear SVM
+
+The learned Linear SVM coefficients were analyzed to identify the features most strongly associated with each class.
+
+### Top Features Associated with Fake News
+
+- read
+- video
+- just
+- featured image
+- featured
+- image
+- GOP
+- president Trump
+- breaking
+- Hillary
+- Getty
+- watch
+- Obama
+- Breitbart
+- HTTPS
+
+### Top Features Associated with Real News
+
+- Reuters
+- said
+- Washington Reuters
+- Reuters president
+- president Donald
+- Washington
+- Wednesday
+- Republican
+- Tuesday
+- Thursday
+- New York Reuters
+- factbox
+- Democratic
+- statement
+- London
+
+### Observation
+
+The model learned strong lexical patterns associated with fake and real news.
+
+Several highly weighted features were related to sources or formatting, such as Reuters, Breitbart, Getty Images, video, featured image, and URLs.
+
+This suggested that the model might be partially relying on source-related artifacts rather than only learning characteristics of the article content.
+
+
+**## Experiment 7 — Source-Bias Analysis**
+
+Purpose: Evaluate whether the model's high performance depends heavily on obvious source and formatting artifacts.
+
+Model: TF-IDF + Linear SVM
+
+### Results
+
+Accuracy: 98.85%
+
+### Comparison
+
+| Model | Accuracy |
+|---|---:|
+| Original Linear SVM | 99.38% |
+| Source-cleaned Linear SVM | 98.85% |
+| Difference | -0.53 percentage points |
+
+### Observation
+
+Removing obvious source-related artifacts resulted in a small decrease in performance from 99.38% to 98.85%.
+
+The model still maintained very high accuracy after source cleaning, suggesting that source artifacts contributed to the original performance but were not the only predictive signals used by the classifier.
