@@ -116,7 +116,7 @@ Confusion Matrix:
 | Body only | 99.24% |
 | Title + Body | 99.38% |
 
-**## Experiment 5 — 5-Fold Cross-Validation**
+## Experiment 5 — 5-Fold Cross-Validation**
 
 Model: TF-IDF + Linear SVM
 
@@ -155,7 +155,7 @@ Mean F1: 99.39%
 Standard Deviation: 0.03 percentage points
 
 
-**## Experiment 6 — Model Interpretability**
+## Experiment 6 — Model Interpretability**
 
 Model: TF-IDF + Linear SVM
 
@@ -206,7 +206,7 @@ Several highly weighted features were related to sources or formatting, such as 
 This suggested that the model might be partially relying on source-related artifacts rather than only learning characteristics of the article content.
 
 
-**## Experiment 7 — Source-Bias Analysis**
+## Experiment 7 — Source-Bias Analysis**
 
 Purpose: Evaluate whether the model's high performance depends heavily on obvious source and formatting artifacts.
 
