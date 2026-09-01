@@ -44,4 +44,4 @@ def prediction_history(request):
             "label":prediction.label,
             "created_at":prediction.created_at,
         })
-        return Response(data,status=status.HTTP_200_OK)
+    return Response(data, status=status.HTTP_200_OK)
